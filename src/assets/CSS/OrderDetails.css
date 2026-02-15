@@ -1,0 +1,144 @@
+.OD {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.OD-1st {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 1rem 2rem 1rem 1rem;
+}
+
+.OD-3rd {
+  padding: 1rem 2rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.OD-1st-img {
+  margin: 1rem 2rem 1rem 1rem;
+  min-width: 60px;
+  height: 60px;
+  object-fit: fill;
+  border: 1px solid orange;
+}
+
+.OD-2nd-img {
+  padding: 0.5rem;
+  max-height: 500px;
+  min-width: 400px;
+  object-fit: fill;
+}
+
+.OD-category {
+  font-weight: bold;
+  font-size: 1.25em;
+  padding-top: 0.25rem;
+}
+
+.OD-rating {
+  display: flex;
+  font-size: 1.25em;
+  padding-top: 0.25rem;
+}
+
+.OD-actualPrice {
+  padding-top: 0.25rem;
+  display: flex;
+  font-size: 1.25em;
+}
+
+.OD-actualPrice > del {
+  padding-right: 1em;
+  color: gray;
+  font-weight: 500;
+}
+
+.OD-actualPrice > p {
+  margin: 0;
+  padding: 0;
+}
+
+.OD-price {
+  padding-top: 0.25rem;
+  font-size: 1.25em;
+}
+.OD-add-btn {
+  width: 10em;
+  margin-top: 0.25rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(235, 49, 49, 0.877);
+  color: white;
+  border-radius: 0.5rem;
+}
+.OD-description {
+  padding: 1em 0 0 0;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+.OD-name {
+  padding: 0.5em 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.OD-about {
+  word-wrap: break-word;
+  padding: 0.5em 0;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+.OD-make-desk {
+  font-size: 0.85em;
+}
+
+@media screen and (max-width: 850px) {
+  .OD {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 550px) {
+  .OD-1st {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .OD-2nd-img {
+    max-height: 450px;
+    min-width: 350px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .OD-2nd-img {
+    max-height: 400px;
+    min-width: 300px;
+  }
+  .OD-3rd {
+    padding: 1rem ;
+  }
+  .OD-1st {
+    margin: 1rem ;
+  }
+}
+@media screen and (max-width: 350px) {
+    .OD-2nd-img {
+      max-height: 300px;
+      min-width: 200px;
+    }
+    .OD-3rd {
+      padding: 1rem ;
+    }
+    .OD-1st {
+      margin: 1rem ;
+    }
+  }

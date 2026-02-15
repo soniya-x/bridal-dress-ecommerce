@@ -1,0 +1,98 @@
+.f-main {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: white;
+  padding-left: 0.5rem;
+  overflow-y: scroll;
+}
+
+.f-main::-webkit-scrollbar{
+  display: none;
+}
+
+.f-first {
+  display: flex;
+  justify-content: space-between;
+}
+.f-p {
+  padding-top: 1rem;
+  font-size: 1rem;
+}
+
+.f-btn {
+  border: none;
+  background-color: white;
+
+  height: auto;
+  padding-top: 0;
+  font-size: 0.85rem;
+}
+
+
+.f-second {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+.f-range{
+    width: 80%;
+    margin-top: .25rem;
+    margin-left: .25rem;
+}
+.f-sortby {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.f-s-lable {
+padding-left: .5rem;
+font-size: .85rem;
+}
+.F-Icons{
+  display: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .ID-filter{
+  display: none;
+}
+.F-Icons{
+  display: block;
+}
+
+.f-main{
+  width: auto;
+      height: auto;
+      overflow-y:auto;
+}
+
+/* .f-main-2 {
+  width: 100vw;
+  height: auto;
+  top: auto;
+  right: 0%;
+  z-index: 3;
+  background: white;
+  padding: 3rem;
+  overflow-y: scroll;
+} */
+}
+
+@media screen and (max-height: 600px) {
+
+  .f-main{
+        overflow-y:auto;
+  }
+}
+@media screen and (min-width:1000px) {
+  .filter-drawer{
+    display: none;
+  }
+}
+
+

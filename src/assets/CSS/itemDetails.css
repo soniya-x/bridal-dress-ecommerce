@@ -1,0 +1,27 @@
+.ID-f-Card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgb(244, 241, 241);
+    height: auto;
+    width: 100%;
+}
+.ID-link{
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 1rem;
+}
+.ID-main {
+    width: 100%;
+    display: flex;
+    min-height:100%;
+}
+.ID-cards {
+    flex-wrap: wrap !important;
+}
+.F-Icons{
+    font-size: 30px;
+}

@@ -1,0 +1,7 @@
+.WL-main{
+    padding: 0;
+    margin: 0;
+    min-height: 90vh;
+    width: 100%;
+    overflow-y: scroll;
+}

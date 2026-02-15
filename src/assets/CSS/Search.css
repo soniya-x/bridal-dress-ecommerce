@@ -1,0 +1,32 @@
+.s-main {
+    margin-top: 2rem;
+    /* : 90vh; */
+    /* width: 100%; */
+    background-color: rgb(243, 243, 243);
+    overflow-y: scroll;
+}
+
+.SearchouterCard {
+    flex-wrap: wrap !important;
+    overflow-x: none !important;
+}
+
+.empty-search {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+
+.Searchcards {
+    min-width: 210px;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    margin: .5rem .5rem 1rem .5rem;
+    flex-direction: column;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

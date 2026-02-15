@@ -1,0 +1,94 @@
+/* for model css */
+
+.model-wraper {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba(189, 189, 189, 0.9);
+}
+.lo-main {
+  position: fixed;
+  max-width: 30rem;
+  min-height: 26rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 0.5rem 1rem 1rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Actual content css */
+
+.lo-close {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.lo-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.lo-logo {
+  height: 50%;
+  width: 30%;
+  object-fit: fit;
+  align-self: center;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+.lg-input {
+  margin: 0.5rem 2rem 1rem 2rem;
+  height: 2.5rem;
+  width: 20rem;
+  font-size: 0.9rem;
+  padding-left: 0.5rem;
+  /* box-shadow: 1rem orangered; */
+  outline: none;
+  box-shadow: orangered .1rem .1rem .1rem .1rem;
+  border: 0.1rem solid orangered;
+  box-shadow: orangered;
+  border-radius: 0.2rem;
+}
+
+.lg-btn {
+  margin: 0.5rem 2rem 1rem 2rem;
+  height: 2.25rem;
+  width: 20rem;
+  font-size: 0.9rem;
+  border-radius: 0.2rem;
+  background-color: orangered;
+  border: none;
+}
+
+.otp-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.otp-p{
+  font-size: .8rem;
+  color: rgb(184, 174, 174);
+}
+.otp-div{
+  padding: .5rem 0;
+}
+
+.otp-input{
+  width: 3rem;
+  border: none;
+  border-radius: .5rem;
+  background-color: rgb(224, 211, 211);
+}
+.lo-resend{
+  display: flex;
+  justify-content: flex-start;
+}
+
+
