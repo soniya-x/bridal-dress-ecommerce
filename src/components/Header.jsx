@@ -1,16 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
+import { useSelector } from "react-redux";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BiSearch, BiLogIn } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
 import { BsCart3, BsTruck } from "react-icons/bs";
 import { GrFormClose } from "react-icons/gr";
 import { FiMenu } from "react-icons/fi";
-import logo from "../Assets/Images/bride3.jpg";
 import { Link, useNavigate } from "react-router-dom";
-import Login from "../Screens/Login";
-import { ToastContainer, toast } from "react-toastify";
-// import { CartOrderData } from "../data";
-
 import {
   Drawer,
   DrawerBody,
@@ -21,8 +17,12 @@ import {
   DrawerCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
+import { ToastContainer, toast } from "react-toastify";
 
-import { useSelector } from "react-redux";
+import logo from "../Assets/Images/bride3.jpg";
+import Login from "../Screens/Login";
+
+import "../Assets/CSS/Header.css";
 
 const Header = () => {
   const [cartCount, setCartCount] = useState(0);

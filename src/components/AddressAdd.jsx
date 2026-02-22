@@ -4,7 +4,6 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { BsTelephone } from 'react-icons/bs'
 import { RiDeleteBinLine } from 'react-icons/ri'
 import { FiEdit } from 'react-icons/fi'
-// import { AddressData } from "../data";
 import { FaPlus } from 'react-icons/fa';
 import AddMoreandEdit from './AddMoreandEdit'
 import { useNavigate } from "react-router-dom";

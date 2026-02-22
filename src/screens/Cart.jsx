@@ -16,14 +16,12 @@ const CartData = () => {
   const [newCart, setNewCart] = useState([]);
   const [addProd, setAddProd] = useState(0);
 
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const closeModel = () => setShowModel(false);
   const cartDataNew = useSelector(
-    (state) => state.cartOrderDataList.cartOrderDataList
+    (state) => state.cartOrderDataList.cartOrderDataList,
   );
-  
 
   useEffect(() => {
     setCartDataFull(cartDataNew);
@@ -38,7 +36,7 @@ const CartData = () => {
         }
       }
       dispatch(setCartOrderList(newArr));
-      setAddProd(0)
+      setAddProd(0);
     };
     fetchData();
   }, [addProd]);
@@ -82,17 +80,6 @@ const CartData = () => {
     };
     fetchData();
   }, []);
-  
-  // const handleCheckQuantity = (orderId) => {
-  //   for (var i = 0; i < cartOrder.length; i++) {
-  //     if (cartOrder[i].orderId == orderId) {
-  //       if (cartOrder[i].quantity <= 1) {
-  //         let array = cartOrder.filter((item) => !(item.orderId === orderId));
-  //         setCartOrder(array);
-  //       }
-  //     }
-  //   }
-  // };
 
   const handleChangeQuantity = (orderId, sign) => {
     setAddProd(addProd + 1);
@@ -132,95 +119,96 @@ const CartData = () => {
   };
 
   return (
-   <div>
-     <div className="back"><button onClick={()=>navigate('/dashboard')} >Back</button></div>
-
-<div className="cart-main">
-  {newCart.length === 0 ? (
-    <div className="cart-2nd-none">
-      <div>My Order</div>
-      <div>
-        No order find on cart yet at this id .
-        <Link to="/dashboard">Click</Link> here to continue shopping
+    <div>
+      <div className="back">
+        <button onClick={() => navigate("/dashboard")}>Back</button>
       </div>
-    </div>
-  ) : (
-    <div className="cart-2nd">
-      <div className="cart-item">
-        {newCart.map((item) => (
-          <div className="cart-items" key={item.orderId}>
-            <img
-              src={item.images}
-              alt="product image "
-              className="cart-items-image"
-            />
-            <div className="cart-items-mid">
-              <p>{item.category} </p>
-              <span>Rs. {item.actualPrice}</span>
-            </div>
-            <div className="cart-items-last">
-              <div className="cart-items-inc-btn">
-                <AiFillMinusSquare
-                  className="cart-items-inc"
-                  onClick={() => handleChangeQuantity(item.orderId, "-")}
-                />
-                <span className="cart-count">
-                  {CartDataFull.find(
-                    (newItem) => newItem.orderId === item.orderId
-                  )?.quantity || 0}
-                </span>
 
-                <AiFillPlusSquare
-                  className="cart-items-inc"
-                  onClick={() => handleChangeQuantity(item.orderId, "+")}
+      <div className="cart-main">
+        {newCart.length === 0 ? (
+          <div className="cart-2nd-none">
+            <div>My Order</div>
+            <div>
+              No order find on cart yet at this id .
+              <Link to="/dashboard">Click</Link> here to continue shopping
+            </div>
+          </div>
+        ) : (
+          <div className="cart-2nd">
+            <div className="cart-item">
+              {newCart.map((item) => (
+                <div className="cart-items" key={item.orderId}>
+                  <img
+                    src={item.images}
+                    alt="product image "
+                    className="cart-items-image"
+                  />
+                  <div className="cart-items-mid">
+                    <p>{item.category} </p>
+                    <span>Rs. {item.actualPrice}</span>
+                  </div>
+                  <div className="cart-items-last">
+                    <div className="cart-items-inc-btn">
+                      <AiFillMinusSquare
+                        className="cart-items-inc"
+                        onClick={() => handleChangeQuantity(item.orderId, "-")}
+                      />
+                      <span className="cart-count">
+                        {CartDataFull.find(
+                          (newItem) => newItem.orderId === item.orderId,
+                        )?.quantity || 0}
+                      </span>
+
+                      <AiFillPlusSquare
+                        className="cart-items-inc"
+                        onClick={() => handleChangeQuantity(item.orderId, "+")}
+                      />
+                    </div>
+                    <button
+                      className="cart-btn-remove "
+                      onClick={() => handleRemoveOrder(item.orderId)}
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="cart-bill">
+              <div className="cart-bill-main">
+                <div className="cart-bill-2nd">
+                  <div style={{ width: "50%" }}>
+                    Subtotal ({newCart.length} items)
+                  </div>
+                  <div>:</div>
+                  <div>Rs. {totalprice}</div>
+                </div>
+                <div className="cart-bill-2nd">
+                  <div style={{ width: "50%" }}>Total Amount</div>
+                  <div>:</div>
+                  <div>Rs. {totalprice}</div>
+                </div>
+              </div>
+              <div className="cart-bill-promo">
+                <input
+                  type="text"
+                  className="cart-bill-input"
+                  placeholder="Enter Promocode"
                 />
+                <button className="cart-bill-apply">Apply</button>
               </div>
               <button
-                className="cart-btn-remove "
-                onClick={() => handleRemoveOrder(item.orderId)}
+                className="cart-bill-checkout"
+                onClick={() => setShowModel(true)}
               >
-                Remove
+                Proceed to Checkout
               </button>
             </div>
+            {showModel && <AddressAdd model={closeModel} />}
           </div>
-        ))}
+        )}
       </div>
-      <div className="cart-bill">
-        <div className="cart-bill-main">
-          <div className="cart-bill-2nd">
-            <div style={{ width: "50%" }}>
-              Subtotal ({newCart.length} items)
-            </div>
-            <div>:</div>
-            <div>Rs. {totalprice}</div>
-          </div>
-          <div className="cart-bill-2nd">
-            <div style={{ width: "50%" }}>Total Amount</div>
-            <div>:</div>
-            <div>Rs. {totalprice}</div>
-          </div>
-        </div>
-        <div className="cart-bill-promo">
-          <input
-            type="text"
-            className="cart-bill-input"
-            placeholder="Enter Promocode"
-          />
-          <button className="cart-bill-apply">Apply</button>
-        </div>
-        <button
-          className="cart-bill-checkout"
-          onClick={() => setShowModel(true)}
-        >
-          Proceed to Checkout
-        </button>
-      </div>
-      {showModel && <AddressAdd model={closeModel} />}
     </div>
-  )}
-</div>
-   </div>
-
   );
 };
 
